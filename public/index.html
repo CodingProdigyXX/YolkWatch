@@ -12,7 +12,6 @@
             
             <h1>Task Tracker</h1>
             
-            
         </header>
         <form id="taskform">
             <div class="form-row">
@@ -24,23 +23,19 @@
                     required="true"
                 >
             </div>
-
-            
-
-           
             <div class="form-row">
-                <label for="taskType">Type</label>
+                <label for="taskType">Meal</label>
                 <select id="taskType" name="taskType" required="true">
                     <option value="">Select one</option>
-                    <option value="Concept Ideation">Concept Ideation</option>
-                    <option value="Wireframing">Wireframing</option>
-                    <option value="Application Coding">Application Coding</option>
-                    <option value="Application Coding">Application Coding</option>
+                    <option value="Concept Ideation">Breakfest</option>
+                    <option value="Wireframing">Lunch</option>
+                    <option value="Application Coding">Dinner</option>
+                    <option value="Application Coding">Snack</option>
                 </select>
             </div>
 
             <div class="form-row">
-                <label for="taskRate">Number of Eggs</label>
+                <label for="taskRate">Egg Number</label>
                 <input
                     type="number"
                     name="taskRate"
@@ -48,10 +43,8 @@
                     required="true"
                 >
             </div>
-
-
             <div class="form-row">
-                <label for="taskTime">Time</label>
+                <label for="taskTime">Completion time (Minutes)</label>
                 <input
                     type="number"
                     name="taskTime"
@@ -59,8 +52,15 @@
                     required="true"
                 >
             </div>
-            
-            
+            <div class="form-row">
+                <label for="taskClient">Rating</label>
+                <input
+                    type="number"
+                    name="taskClient"
+                    id="taskClient"
+                    required="true"
+                >
+            </div>
             <div class="form-row">
                 <input type="submit">
             </div>
