@@ -1,69 +1,80 @@
+<!-- RENAME THIS FILE TO index.html WHILE YOU ARE WORKING ON IT SO IT APPEARS IN REPLIT -->
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Task Tracker</title>
-        <link rel="stylesheet" href="scss/main.scss">
-    </head>
-    <body>
-        <header>
-            <h1>Task Tracker</h1>
-            <h1>Task Tracker</h1>
-        </header>
-        <form id="taskform">
-            <div class="form-row">
-                <label for="taskName">Name</label>
-                <input
-                    type="text"
-                    name="taskName"
-                    id="taskName"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskType">Type</label>
-                <select id="taskType" name="taskType" required="true">
-                    <option value="">Select one</option>
-                    <option value="Concept Ideation">Concept Ideation</option>
-                    <option value="Wireframing">Wireframing</option>
-                    <option value="Application Coding">Application Coding</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label for="taskRate">Rate</label>
-                <input
-                    type="number"
-                    name="taskRate"
-                    id="taskRate"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskTime">Time</label>
-                <input
-                    type="number"
-                    name="taskTime"
-                    id="taskTime"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskClient">Client</label>
-                <input
-                    type="text"
-                    name="taskClient"
-                    id="taskClient"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <input type="submit">
-            </div>
-        </form>
-        <h2>Tasks</h2>
-        <ul id="tasklist"></ul>
-        <script src="script.js"></script>
-    </body>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Task Tracker</h1>
+  </header>
+  <main>
+    <section>
+      <form id="taskform">
+        <h2>Add Task</h2>
+        <div class="form-row">
+          <label for="taskName">Name</label>
+          <input type="text" name="taskName" id="taskName" required="true" />
+        </div>
+        <div class="form-row">
+          <label for="taskType">Type</label>
+          <select id="taskType" name="taskType" required="true">
+            <option value="">Select one</option>
+            <option value="Concept Ideation">Concept Ideation</option>
+            <option value="Design">Design</option>
+            <option value="Development">Development</option>
+            <option value="Tech Support">Tech Support</option>
+            <option value="Administration">Administration</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="taskRate">Rate</label>
+          <input type="number" name="taskRate" id="taskRate" required="true" />
+        </div>
+        <div class="form-row">
+          <label for="taskTime">Time</label>
+          <input type="number" name="taskTime" id="taskTime" required="true" />
+        </div>
+        <div class="form-row">
+          <label for="taskClient">Client</label>
+          <input type="text" name="taskClient" id="taskClient" required="true" value="University of Sydney" disabled />
+        </div>
+        <div class="form-row">
+          <input type="submit">
+        </div>
+      </form>
+    </section>
+    <aside>
+      <ul id="tasklist">
+      </ul>
+    </aside>
+  </main>
+  <article>
+    <button id="generateInvoice">Generate Invoice</button>
+    <section class="invoice-box">
+      <header>
+        <h1>Invoice</h1>
+      </header>
+      <p id='client'>Client Name</p>
+      <table id="invoiceTable" cellpadding="0" cellspacing="0">
+
+        <tr class="heading">
+          <td>Task</td>
+          <td>Price</td>
+        </tr>
+
+      </table>
+      <p id="total">Total: $0</p>
+    </section>
+  </article>
+  <script src="script.js"></script>
+  <script src="tasksTests.js"></script>
+</body>
+
 </html>
