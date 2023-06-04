@@ -1,5 +1,31 @@
 // Setting up variables for our HTML elements using DOM selection
+// Create the header element
+const header = document.createElement('div');
+header.id = 'header';
+
+// Create the image element
+const logo = document.createElement('img');
+logo.id = 'logo';
+logo.src = '/Users/arielberger/Library/Mobile Documents/com~apple~CloudDocs/Uni/Year 2/Coding/YolkWatch/YolkLogo.png'; // Replace with the path to your image
+
+logo.alt = 'Website Logo';
+
+// Create the heading element
+const heading = document.createElement('h1');
+//heading.textContent = 'My Website';
+
+// Append the logo and heading to the header
+header.appendChild(logo);
+header.appendChild(heading);
+
+// Get the body element and prepend the header to it
+const body = document.querySelector('body');
+body.insertBefore(header, body.firstChild);
+
+
+
 const form = document.getElementById("taskform");
+
 const tasklist = document.getElementById("tasklist");
 
 form.addEventListener("submit", function (event) {

@@ -1,5 +1,37 @@
+
+
+header {
+    background-color:#FFFCF8;
+  }
+  
+  header > h1 {
+    text-align: center;
+    margin: 0 0;
+    font-weight: 900;
+    padding: 50px;
+    color: #8B4513;
+  }
+
+  header > h2 {
+    text-align: center;
+    margin: 0 0;
+    font-weight: 900;
+    padding: 10px;
+    color: #8B4513;
+  }
+
 h1 {
     color: blue;
+}
+
+$background-color:  #F2E9E4;
+
+body {
+  background-color: $background-color;
+}
+
+body {
+  background-color: $background-color;
 }
 
 html {
@@ -12,11 +44,15 @@ header > h1 {
     text-align: center;
 }
 
+
+
 form {
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto;
-    border: 2px solid grey;
-    padding: 2em 1em;
+    //border: 2px solid grey;
+    padding: 1em 1em;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+     
 }
 
 .form-row {
@@ -26,11 +62,19 @@ form {
 }
 
 .form-row > label {
-    width: 100px;
+    width: 200px;
 }
+
+
 
 .form-row > input,
 .form-row > select {
     padding: 0.5em;
     flex-grow: 1;
 }
+
+#logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
