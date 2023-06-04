@@ -28,8 +28,20 @@ const form = document.getElementById("taskform");
 
 const tasklist = document.getElementById("tasklist");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+function addTask(name, type, rate, time, client) {
+  let task = {
+    name,
+    type,
+    id: Date.now(),
+    date: new Date().toISOString(),
+    rate,
+    time,
+    client,
+    billable: false
+  }
+  taskList.push(task);
+  displayTask(task);
+}
 
     addTask(
         form.elements.taskName.value,
@@ -38,7 +50,7 @@ form.addEventListener("submit", function (event) {
         form.elements.taskTime.value,
         form.elements.taskClient.value,
     )
-})
+
 
 function displayTasks() {
     
@@ -119,7 +131,47 @@ function addTask(name, type, rate, time, client) {
 
     displayTasks();
 
+  
+  // Leave the bracket below to close the displayTask function
 }
 
 // Call the function with test values for the input paramaters
 addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
+
+
+// SECTION 2 CODE BELOW
+let invoiceButtonElem = document.getElementById('generateInvoice');
+let invoiceTableElem = document.getElementById('invoiceTable');
+let clientParagraph = document.getElementById('client');
+let totalParagraph = document.getElementById('total');
+
+
+invoiceButtonElem.addEventListener("click", () => {
+  let total = 0;
+  
+  for (let i = 0; i < taskList.length; i++) {
+      if (taskList[i].billable) {
+        clientParagraph.textContent = taskList[i].client;
+        
+        let price = taskList[i].rate * taskList[i].time;
+        total += price;
+        totalParagraph.innerHTML = `Total: $${total}`
+        
+        let rowElem = document.createElement('tr');
+        let itemElem = document.createElement('td');
+        let priceElem = document.createElement('td');
+        let itemText = document.createTextNode(taskList[i].name);
+        let priceText = document.createTextNode('$' + price);
+        
+        itemElem.appendChild(itemText);
+        priceElem.appendChild(priceText);
+        
+        rowElem.appendChild(itemElem);
+        rowElem.appendChild(priceElem);
+        
+        invoiceTableElem.appendChild(rowElem);
+        
+      }
+  }
+  
+})
