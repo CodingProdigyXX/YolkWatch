@@ -4,15 +4,16 @@ const tasklist = document.getElementById("tasklist");
 
 var taskList = [];
 
-function addTask(name, type, rate, time, review) {
+function addTask(name, type, number, date, time, review) {
   let task = {
     name,
     type,
-    id: Date.now(),
-    date: new Date().toISOString(),
-    rate,
+    number,
+    date,
     time,
     review,
+    id: Date.now(),
+    date: new Date().toISOString(),
     billable: false
   }
   taskList.push(task);
@@ -25,8 +26,9 @@ form.addEventListener("submit", function(event) {
     form.elements.eggName.value,
     form.elements.eggMeal.value,
     form.elements.eggNumber.value,
+    form.elements.eggDate.value,
     form.elements.eggTime.value,
-    form.elements.eggRate.value,
+    form.elements.eggReview.value,
   )
 })
 
@@ -34,9 +36,13 @@ function displayTask(task) {
   let item = document.createElement("li");
   item.setAttribute("data-id", task.id);
   item.innerHTML = 
-    `<p><strong>${task.name}</strong><br>${task.type}<br><em>${task.rate} Eggs</em><br><em>${task.time} minutes</em><br>${task.review}/10 Rating</p>
-    
-     
+    `<p><strong>${task.name}</strong><br>
+    ${task.type}<br><em>
+    ${task.number} Eggs</em><br><em>
+    ${task.date} Date egg was made</em><br>
+    ${task.time} Time egg was made<br>
+    ${task.review}/10 Rating
+
     `;
     //<span><em>${task.time} minutes</em><br>${task.rate}/10 Rating</span>
 
@@ -96,8 +102,30 @@ function displayTask(task) {
   // Leave the bracket below to close the displayTask function
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const boxButtons = document.querySelectorAll('.boxButton');
+  const closeButtons = document.querySelectorAll('.closePopup');
+  const popupContainers = document.querySelectorAll('.popupContainer');
+
+  
+
+  boxButtons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+      popupContainers[index].style.display = 'block';
+    });
+  });
+
+  closeButtons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+      popupContainers[index].style.display = 'none';
+    });
+  });
+});
 
 
+
+
+/*
 // SECTION 2 CODE BELOW
 let invoiceButtonElem = document.getElementById('generateInvoice');
 let invoiceTableElem = document.getElementById('invoiceTable');
@@ -134,3 +162,4 @@ invoiceButtonElem.addEventListener("click", () => {
   }
   
 })
+*/

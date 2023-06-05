@@ -22,7 +22,7 @@ html {
     grid-gap:0px;
     grid-template-rows:
     min-content
-    min-content
+    200px
     min-content
     min-content
     min-content
@@ -33,12 +33,13 @@ html {
 
   grid-template-areas:
     ". header header header ."
+    ". eggCounter eggCounter eggCounter ."
     
     ". taskform taskform taskform ."
     ". tasklist tasklist tasklist ."
     ". eggMenu eggMenu eggMenu ."
 
-    ". exhibit3 exhibit3 info3 ."
+    ". grid grid grid ."
     ". info4 exhibit4 exhibit4 ."
     ". content content content ."
     ". content2 content2 content2 ."
@@ -57,6 +58,19 @@ body {
   text-align: center;
   color: #8B4513;
   background-color: #FFFCF8;
+  padding: 50px;
+  font-family: "Inter", sans-serif;
+  font-size: 42px;
+}
+
+.eggCounter{
+  grid-area:eggCounter;
+  align-items:center;
+  justify-content: space-between;
+  
+  text-align: center;
+  color: #8B4513;
+  background-color: #b946a2;
   padding: 50px;
   font-family: "Inter", sans-serif;
   font-size: 42px;
@@ -89,13 +103,31 @@ body {
   gap: 10px;
 }
 
-.eggMenu .grid-item {
+
+
+.box {
+  position: relative;
   background-color: #F2E9E4;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  position: relative;
-  justify-content: center;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.boxButton {
+  width: 80%;
 }
 
 .box-button {
@@ -112,25 +144,49 @@ body {
   border-radius: 100px;
 }
 
+
 .box-image {
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 100%;
   border-radius: 50%;
   overflow: hidden;
-
   border-radius: 50%;
-  
   display: block;
   margin: 0 auto;
   
 }
 
-.box-image img {
+//.box-image img {
+  //width: 100%;
+  //height: auto;
+  //object-fit: cover;
+//}
+
+
+
+
+
+
+.popupContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
 
+.popupContent {
+  background-color: #fff;
+  max-width: 1000;
+  margin: 20px auto;
+  margin-top: calc(50vh - 150px);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
 
 header > h1 {
   text-align: center;
