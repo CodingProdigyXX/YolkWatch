@@ -4,13 +4,13 @@ var runCount = 1;
 function timerMethod() {
   switch (runCount){
     case 1:
-      addTask("Initial Sketches", "Concept Ideation", 50, 5, "University of Sydney");
+      addTask("Fried", "Breakfest", 5, 5, "8");
       break;
     case 2:
-      addTask("Home Page Wireframes", "Design", 65, 3, "University of Sydney");
+      addTask("Scrambled", "Lunch", 4, 3, "6");
       break;
     case 3:
-      addTask("Home Page Coding", "Development", 80, 10, "University of Sydney");
+      addTask("Boiled", "Snack", 2, 10, "3");
       break;
   }
     runCount++;

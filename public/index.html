@@ -1,80 +1,128 @@
-<!-- RENAME THIS FILE TO index.html WHILE YOU ARE WORKING ON IT SO IT APPEARS IN REPLIT -->
+
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Task Tracker</title>
-        <link rel="stylesheet" href="scss/main.scss">
-    </head>
-    <body>
-        <header>
-                <!-- Put the main heading for the page here - It should be your name -->
-                <div id="header">
-                    <img id="logo" src="#" alt="Website Logo">
-                  </div>
-                    <h1>YolkWatch</h1>
-                    <h1>YolkWatch</h1>
-                </header>
-                <br>
+<html>
 
-        <form id="taskform">
-            <h2>Task Tracker</h2>
-            <div class="form-row">
-                <label for="taskName">Egg Type</label>
-                <input
-                    type="text"
-                    name="taskName"
-                    id="taskName"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskType">Meal</label>
-                <select id="taskType" name="taskType" required="true">
-                    <option value="">Select one</option>
-                    <option value="Concept Ideation">Breakfest</option>
-                    <option value="Wireframing">Lunch</option>
-                    <option value="Application Coding">Dinner</option>
-                    <option value="Application Coding">Snack</option>
-                </select>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  
+  <link href="./scss/main.scss" rel="stylesheet" type="text/css" />
+</head>
 
-            <div class="form-row">
-                <label for="taskRate">Number of Eggs</label>
-                <input
-                    type="number"
-                    name="taskRate"
-                    id="taskRate"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskTime">Completion time (Minutes)</label>
-                <input
-                    type="number"
-                    name="taskTime"
-                    id="taskTime"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <label for="taskClient">Rating</label>
-                <input
-                    type="number"
-                    name="taskClient"
-                    id="taskClient"
-                    required="true"
-                >
-            </div>
-            <div class="form-row">
-                <input type="submit">
-            </div>
-        </form>
-        <h2>Tasks</h2>
-        <ul id="tasklist"></ul>
-        <script src="script.js"></script>
-    </body>
+<body>
+  <div id="site_wrap">
+  
+    <div class="header">
+      <h1>YolkWatch</h1>
+    </div>
+  
+    
+    <div class="taskform">
+      <form id="taskform">
+        <h2>Add Egg</h2>
+        <div class="form-row">
+          <label for="eggName">Egg Type</label>
+          <input type="text" name="eggName" id="eggname" required="true" />
+        </div>
+
+        <div class="form-row">
+          <label for="eggMeal">Meal</label>
+          <select id="eggMeal" name="mealType" required="true">
+            <option value="">Select one</option>
+            <option value="Breakfest">Breakfeast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="eggNumber">Number of Eggs</label>
+          <input type="number" name="eggNumber" id="eggNumber" required="true" />
+        </div>
+        <div class="form-row">
+          <label for="eggTime">Completion Time Minutes</label>
+          <input type="number" name="eggTime" id="eggTime" required="true" />
+        </div>
+        <div class="form-row">
+          <label for="eggRat">Rating</label>
+          <!--<input type="number" name="taskClient" id="taskClient" required="true"  value="University of Sydney" disabled />-->
+          <input type="number" name="eggRate" id="eggRate" required="true"/>
+        </div>
+        <div class="form-row">
+          <input type="submit">
+        </div>
+      </form>
+    </div>
+
+    
+    
+    <div class="tasklist">
+      <ul id="tasklist">
+      </ul>
+    </div>
+
+    <div class="eggMenu">
+      
+      <h3>Eggs</h3>
+      <br>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+        <div class="grid-item">
+          <div class="box-image">
+            <img src="./Images/YolkLogo.png" alt="Image 1">
+          </div>
+          <button class="box-button">Button 1</button>
+        </div>
+      </div>
+  
+  
+
+  <script src="script.js"></script>
+  <script src="tasksTests.js"></script>
+</div>
+</body>
+
 </html>

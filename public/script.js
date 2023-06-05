@@ -1,34 +1,10 @@
-// Setting up variables for our HTML elements using DOM selection
-// Create the header element
-const header = document.createElement('div');
-header.id = 'header';
-
-// Create the image element
-const logo = document.createElement('img');
-logo.id = 'logo';
-logo.src = '/Users/arielberger/Library/Mobile Documents/com~apple~CloudDocs/Uni/Year 2/Coding/YolkWatch/YolkLogo.png'; // Replace with the path to your image
-
-logo.alt = 'Website Logo';
-
-// Create the heading element
-const heading = document.createElement('h1');
-//heading.textContent = 'My Website';
-
-// Append the logo and heading to the header
-header.appendChild(logo);
-header.appendChild(heading);
-
-// Get the body element and prepend the header to it
-const body = document.querySelector('body');
-body.insertBefore(header, body.firstChild);
-
-
-
+// Orginal code from the week 3 tutorial
 const form = document.getElementById("taskform");
-
 const tasklist = document.getElementById("tasklist");
 
-function addTask(name, type, rate, time, client) {
+var taskList = [];
+
+function addTask(name, type, rate, time, review) {
   let task = {
     name,
     type,
@@ -36,107 +12,90 @@ function addTask(name, type, rate, time, client) {
     date: new Date().toISOString(),
     rate,
     time,
-    client,
+    review,
     billable: false
   }
   taskList.push(task);
   displayTask(task);
 }
 
-    addTask(
-        form.elements.taskName.value,
-        form.elements.taskType.value,
-        form.elements.taskRate.value,
-        form.elements.taskTime.value,
-        form.elements.taskClient.value,
-    )
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  addTask(
+    form.elements.eggName.value,
+    form.elements.eggMeal.value,
+    form.elements.eggNumber.value,
+    form.elements.eggTime.value,
+    form.elements.eggRate.value,
+  )
+})
 
-
-function displayTasks() {
+function displayTask(task) {
+  let item = document.createElement("li");
+  item.setAttribute("data-id", task.id);
+  item.innerHTML = 
+    `<p><strong>${task.name}</strong><br>${task.type}<br><em>${task.rate} Eggs</em><br><em>${task.time} minutes</em><br>${task.review}/10 Rating</p>
     
-    tasklist.innerHTML = "";
+     
+    `;
+    //<span><em>${task.time} minutes</em><br>${task.rate}/10 Rating</span>
+
+  tasklist.appendChild(item);
+
+  form.reset();
+
+  let delButton = document.createElement("button");
+  let delButtonText = document.createTextNode("🗑️");
+  delButton.appendChild(delButtonText);
+  item.appendChild(delButton);
+
+  delButton.addEventListener("click", function(event) {
+
+    taskList.forEach(function(taskArrayElement, taskArrayIndex) {
+      if (taskArrayElement.id == item.getAttribute('data-id')) {
+        taskList.splice(taskArrayIndex, 1)
+      }
+    })
+
+    console.log(taskList)
+    item.remove();
+  })
+
+  // SECTION 1 CODE BELOW
+  let checkboxElem = document.createElement("input");
+  checkboxElem.setAttribute("type", "checkbox");
+  
+  // <input type="checkbox"></input>
+  // item.prepend(checkboxElem)
+  item.insertBefore(checkboxElem, item.firstChild)
+  
+  checkboxElem.addEventListener("change", (event) => {
+    // Event listener callback function
+    let isChecked = event.target.checked;
     
-    let localTasks = JSON.parse(localStorage.getItem('tasks'));
+    // for (let i = 0; i < taskList.length; i++) {
+      
+    // }
     
-    if (localTasks !== null) {
-        
-        localTasks.forEach((task) => {
-            
-            console.log(task)
-        
-            // Create task items for the DOM and add to the list
-            let item = document.createElement("li");
-            item.setAttribute("data-id", task.id);
-            item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p>`;
-            tasklist.appendChild(item);
-
-            // Clear the value of the input once the task has been added to the page
-            form.reset();
-
-            // Setup delete button DOM elements
-            let delButton = document.createElement("button");
-            let delButtonText = document.createTextNode("Delete");
-            delButton.appendChild(delButtonText);
-            item.appendChild(delButton); // Adds a delete button to every task
-
-            // Listen for when the delete button is clicked
-            delButton.addEventListener("click", function (event) {
-
-                localTasks.forEach(function (taskArrayElement, taskArrayIndex) {
-                    if (taskArrayElement.id == item.getAttribute('data-id')) {
-                        localTasks.splice(taskArrayIndex, 1)
-                    }
-                })
-                
-                localStorage.setItem('tasks', JSON.stringify(localTasks));
-
-                item.remove(); // Remove the task item from the page when button clicked
-                // Because we used 'let' to define the item, 
-                // this will always delete the right element
-            })
-            
-        }) // Closing brackets for for loop
-    } // Closing bracket for if statement
-}
-
-// Function to add task to the list
-function addTask(name, type, rate, time, client) {
-
-    // Creating the object, directly passing in the input parameters
-    let task = {
-        name,
-        type,
-        id: Date.now(),
-        date: new Date().toISOString(),
-        rate,
-        time,
-        client
-    }
-    
-    // fetching and parse localStorage value
-    let localTasks = JSON.parse(localStorage.getItem('tasks'));
-    
-    if (localTasks == null) {
-        localTasks = [task];
-    } else {
-        // Check to see if there is an existing task
-        if (localTasks.find(element => element.id === task.id)) {
-            console.log('Task ID already exists');
+    taskList.forEach(function(taskArrayElement, taskArrayIndex){
+      if (taskArrayElement.id == item.getAttribute("data-id")){
+        if (isChecked) {
+          item.style.backgroundColor = 'rgb(220, 255, 220)';
+          taskArrayElement.billable = true;
         } else {
-            localTasks.push(task);
+          item.style.backgroundColor = '#ffffff';
+          taskArrayElement.billable = false;
         }
-    }
+      }
+    })
     
-    localStorage.setItem('tasks', JSON.stringify(localTasks))
+  })
 
-    displayTasks();
 
   
   // Leave the bracket below to close the displayTask function
 }
 
-// Call the function with test values for the input paramaters
-addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
 
 // SECTION 2 CODE BELOW
