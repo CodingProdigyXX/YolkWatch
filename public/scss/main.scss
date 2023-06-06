@@ -7,7 +7,8 @@
 html {
   height: 100%;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  color: #8B4513;
 }
 
 #site_wrap{
@@ -22,7 +23,7 @@ html {
     grid-gap:0px;
     grid-template-rows:
     min-content
-    200px
+    min-content
     min-content
     min-content
     min-content
@@ -32,9 +33,10 @@ html {
     ;
 
   grid-template-areas:
-    ". header header header ."
+    "header header header header header"
+    ". result result result ."
+    ". circleContainer circleContainer circleContainer ."
     ". eggCounter eggCounter eggCounter ."
-    
     ". taskform taskform taskform ."
     ". tasklist tasklist tasklist ."
     ". eggMenu eggMenu eggMenu ."
@@ -50,37 +52,121 @@ body {
   background-color: #F2E9E4;
 }
 
-.header{
-  grid-area:header;
-  align-items:center;
-  justify-content: space-between;
-  
+.header {
+  grid-area: header;
+}
+
+.centered-text {
   text-align: center;
   color: #8B4513;
   background-color: #FFFCF8;
-  padding: 50px;
+  padding: 1em;
   font-family: "Inter", sans-serif;
   font-size: 42px;
+  font-weight: 600;
 }
 
+.result {
+  grid-area: result;
+
+  font-family: "Inter", sans-serif;
+
+  color: #8B4513;
+  font-size: 64px;
+  font-weight: 600;
+  
+  margin-top: 20px;
+  
+}
+
+
+.circleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-area: circleContainer;
+}
+
+.circle {
+  width: 40px;
+  height: 60px;
+  background-color: #8B4513;
+  border-radius: 50% / 60% 60% 40% 40%;
+  margin: 5px;
+}
+
+/*
 .eggCounter{
   grid-area:eggCounter;
   align-items:center;
   justify-content: space-between;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   
   text-align: center;
   color: #8B4513;
-  background-color: #b946a2;
+  background-color: #F2E9E4;
   padding: 50px;
   font-family: "Inter", sans-serif;
   font-size: 42px;
 }
+*/
+
+h2 {
+  margin-bottom: 0.5em;
+  text-align: left;
+  font-size: 42px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+.form-row input[type="number"] {
+  width: 100px;
+}
+
+
+
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+  grid-area: result;
+}
+
+.circleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-area: circleContainer;
+}
+
+.circle {
+  width: 40px;
+  height: 60px;
+  background-color: #8B4513;
+  border-radius: 50% / 60% 60% 40% 40%;
+  margin: 5px;
+}
+
 
 .taskform{
   grid-area:taskform;
   //display:left;
   //align-items:left;
   justify-content: space-between;
+  border-radius: 10px;
+  
 }
 
 .tasklist{
@@ -102,8 +188,6 @@ body {
   grid-auto-rows: 280px;
   gap: 10px;
 }
-
-
 
 .box {
   position: relative;
@@ -188,21 +272,6 @@ body {
   text-align: center;
 }
 
-header > h1 {
-  text-align: center;
-  color: #8B4513;
-  background-color: #FFFCF8;
-  padding: 50px;
-  font-family: "Inter", sans-serif;
-  font-size: 42px;
-}
-
-h2 {
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-
 
 
 
@@ -210,15 +279,14 @@ form {
   margin: 1em auto;
   //border: 2px solid grey;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  
   padding: 2em;
-  
 }
 
 .form-row {
   display: flex;
   justify-content: flex-end;
   padding: .5em;
+  
 }
 
 .form-row > label {
@@ -232,13 +300,7 @@ form {
   flex-grow: 1;
 }
 
-aside {
-  
-  grid-area: tasklist;
-  padding: 1em;
-  overflow-y: scroll;
-  
-}
+
 
 
 #tasklist {
@@ -248,6 +310,7 @@ aside {
   list-style: none;
   margin-block-start: 0;
   padding: 0;
+  
 }
 
 #tasklist li {
@@ -255,9 +318,10 @@ aside {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border: 1px solid gray;
+  
   padding: 1em;
   margin-bottom: 1em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #tasklist li p {
@@ -265,6 +329,7 @@ aside {
   margin-left: 10px;
   max-width: 200px;
 }
+
 #tasklist li span {
   text-align: right;
   flex-grow: 1;
@@ -272,24 +337,21 @@ aside {
   max-width: 200px;
 }
 
+/*
 #tasklist li input[type="checkbox"] {
   margin-top: 10px;
   width: 20px;
   height: 20px;
 }
+*/
 
 #tasklist li button {
   font-size: 20px;
   padding: 4px;
 }
 
-article {
-  background-color: #efefef;
-  height: 100vh;
-  padding: 3em 0;
-  overflow-y: scroll;
-}
 
+/*
 #generateInvoice {
   display: block;
   margin: 2em auto;
@@ -352,3 +414,4 @@ article {
   text-align: right;
   font-weight: bold;
 }
+*/

@@ -4,11 +4,11 @@ const tasklist = document.getElementById("tasklist");
 
 var taskList = [];
 
-function addTask(name, type, number, date, time, review) {
+function addTask(name, type, counter, date, time, review) {
   let task = {
     name,
     type,
-    number,
+    counter,
     date,
     time,
     review,
@@ -25,7 +25,7 @@ form.addEventListener("submit", function(event) {
   addTask(
     form.elements.eggName.value,
     form.elements.eggMeal.value,
-    form.elements.eggNumber.value,
+    form.elements.eggCounter.value,
     form.elements.eggDate.value,
     form.elements.eggTime.value,
     form.elements.eggReview.value,
@@ -37,11 +37,12 @@ function displayTask(task) {
   item.setAttribute("data-id", task.id);
   item.innerHTML = 
     `<p><strong>${task.name}</strong><br>
-    ${task.type}<br><em>
-    ${task.number} Eggs</em><br><em>
+    ${task.type}<br>
+    
+    ${task.counter}  Eggs<br>
     ${task.date} Date egg was made</em><br>
     ${task.time} Time egg was made<br>
-    ${task.review}/10 Rating
+    ${task.review} / 10 Rating
 
     `;
     //<span><em>${task.time} minutes</em><br>${task.rate}/10 Rating</span>
@@ -67,40 +68,59 @@ function displayTask(task) {
     item.remove();
   })
 
-  // SECTION 1 CODE BELOW
-  let checkboxElem = document.createElement("input");
-  checkboxElem.setAttribute("type", "checkbox");
   
-  // <input type="checkbox"></input>
-  // item.prepend(checkboxElem)
-  item.insertBefore(checkboxElem, item.firstChild)
-  
-  checkboxElem.addEventListener("change", (event) => {
-    // Event listener callback function
-    let isChecked = event.target.checked;
-    
-    // for (let i = 0; i < taskList.length; i++) {
-      
-    // }
-    
-    taskList.forEach(function(taskArrayElement, taskArrayIndex){
-      if (taskArrayElement.id == item.getAttribute("data-id")){
-        if (isChecked) {
-          item.style.backgroundColor = 'rgb(220, 255, 220)';
-          taskArrayElement.billable = true;
-        } else {
-          item.style.backgroundColor = '#ffffff';
-          taskArrayElement.billable = false;
-        }
-      }
-    })
-    
-  })
 
 
   
   // Leave the bracket below to close the displayTask function
 }
+
+var numbers = [];
+
+function recordAndAdd() {
+  var inputElement = document.getElementById("eggCounter");
+  
+  var number = parseInt(inputElement.value);
+  if (!isNaN(number)) {
+    numbers.push(number);
+    inputElement.value = "";
+    displayNumbersSum();
+  }
+}
+
+function displayNumbersSum() {
+  var resultElements = document.getElementsByClassName("result");
+  var circleContainers = document.getElementsByClassName("circleContainer");
+
+  var sum = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  for (var j = 0; j < resultElements.length; j++) {
+    resultElements[j].textContent = "Total Eggs: " + sum;
+    resultElements[j].style.color = "#8B4513"; // Apply CSS color property
+    resultElements[j].style.fontSize = "40px";
+  }
+
+  for (var k = 0; k < circleContainers.length; k++) {
+    circleContainers[k].innerHTML = "";
+    for (var l = 0; l < sum; l++) {
+      var circle = document.createElement("span");
+      circle.classList.add("circle");
+      circleContainers[k].appendChild(circle);
+    }
+  }
+}
+
+// Example usage
+displayNumbersSum();
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const boxButtons = document.querySelectorAll('.boxButton');

@@ -15,13 +15,26 @@
   <div id="site_wrap">
   
     <div class="header">
-      <h1>YolkWatch</h1>
+      
+      <h1 class="centered-text">YolkWatch</h1>
+      
+      
+      
     </div>
 
+    <div class="result"></div>
+    <div class="circleContainer"></div>
+
+    
+<!--
     <div class="eggCounter">
-      <p>Put Egg counter Here</p>
-    </div>
-  
+      <label for="eggCounter">Enter a number:</label>
+      <input type="number" id="eggCounter">
+      <button onclick="recordAndAdd()">Submit</button>
+    
+    <div id="result"></div>
+    <div id="circleContainer"></div>
+  </div> -->
     
     <div class="taskform">
       <form id="taskform">
@@ -42,12 +55,23 @@
             <option value="Snack">Snack</option>
           </select>
         </div>
-        
+
+        <!--
         <div class="form-row">
           <label for="eggNumber">Number of Eggs</label>
           <input type="number" name="eggNumber" id="eggNumber" required="true" />
         </div>
+        -->
+        <div class="form-row">
+          <label for="eggCounter">Enter a number:</label>
+          <input type="number" name="eggCounter" id="eggCounter" required="true" />
 
+          
+        </div>
+          
+        
+        
+        
         <div class="form-row">
           <label for="eggDate">Date of Completion </label>
           <input type="date" name="eggDate" id="eggDate">
@@ -82,8 +106,12 @@
               <input type="radio" id="eggReview" name="eggReview" value="10">
             <label for="eggReview">10</label>
         </div>
+        
         <div class="form-row">
+          
+          <!--<input type="submit" value="Submit" onclick="recordAndAdd()">-->
 
+          <button onclick="recordAndAdd()">Submit</button>
           <input type="submit">
         </div>
       </form>
@@ -203,7 +231,7 @@
   
 
   <script src="script.js"></script>
-  <!--<script src="tasksTests.js"></script>-->
+  <script src="tasksTests.js"></script>
 </div>
 </body>
 
