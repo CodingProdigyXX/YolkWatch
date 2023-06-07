@@ -10,12 +10,12 @@ https://github.com/CodingProdigyXX/YolkWatch.git
 ### Instructions
 1) Fill out the tracker form with the input underneath the Heading "Add Egg" as if you had just made an egg meal and how to want to record your actions.
 	
-Enter Egg Type i.e. Fried, Boiled, Scrambled
-Enter what meal this was for
-Enter how many eggs you used
-Enter what day you made your egg
-Enter what time you Made your egg
-Enter a rating out of 10 on how your egg Tasted.
+<p>Enter Egg Type i.e. Fried, Boiled, Scrambled</p>
+<p>Enter what meal this was for</p>
+<p>Enter how many eggs you used</p>
+<p>Enter what day you made your egg</p>
+<p>Enter what time you Made your egg</p>
+<p>Enter a rating out of 10 on how your egg Tasted.</p>
 
 2) After doing this click the RIGHT submit button
 This will bring up the task list with all your recorded info as well as a delete button if you've made a mistake.
