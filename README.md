@@ -12,7 +12,7 @@ https://github.com/CodingProdigyXX/YolkWatch.git
 
 
 <br>
-![Yolk Watch Task Form](/readMeImages/TaskForm.png)
+![Yolk Watch Task Form](/readMeImages/FullApp.png)
 
 ### Instructions
 <p>1) Fill out the tracker form with the input underneath the Heading "Add Egg" as if you had just made an egg meal and how to want to record your actions.</p>
@@ -56,7 +56,7 @@ The task list was responsible for getting the required input data from the task 
 **Egg Counter**<br>
 This feature was responsible for taking the "number" field from the taskForm and displaying this number visually through an egg shape at the top of the page. The second half of this feature was to add existing inputs so that the total is recorded and still displayed. This meant if there was an input of 5 and a second input the total number of eggs displayed would be 11 etc. Until the page is reset
 <br>
-![Yolk Watch Task Form](/readMeImages/TaskCounter.png)
+![Yolk Watch Task Form](/readMeImages/EggCounter.png)
 
 **Egg Recipes**<br>
 The Last major feature is the Egg Recipe area at the bottom of the page. With a total of 8 recipes, these boxes were popups that brought up each recipe. While separate from the rest of the tracking side of the application I included this to both serve to inspire the user of what eggs they can make to encourage diversity as well as to test myself with CSS as this required a lot of work of using grids and being adaptive based off screen width.
