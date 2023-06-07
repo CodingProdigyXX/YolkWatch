@@ -6,8 +6,6 @@
 **GitHub Web Link**
 <br>
 https://github.com/CodingProdigyXX/YolkWatch.git
-<br>
-**Git Zip folder Instructions**
 
 <br>
 
