@@ -10,7 +10,9 @@ https://github.com/CodingProdigyXX/YolkWatch.git
 
 **Git Zip folder Instructions**
 
-![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+![research](/public/readmeimages/research.png)
+<br>
+![Yolk Watch Task Form](/public/readmeimages/TaskForm.png) "YolkWatch Task Form")
 
 ### Instructions
 <p>1) Fill out the tracker form with the input underneath the Heading "Add Egg" as if you had just made an egg meal and how to want to record your actions.</p>
