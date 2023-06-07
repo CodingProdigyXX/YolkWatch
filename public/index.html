@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -13,226 +11,448 @@
 
 <body>
   <div id="site_wrap">
-  
     <div class="header">
-      
       <h1 class="centered-text">YolkWatch</h1>
-      
-      
-      
     </div>
 
     <div class="result"></div>
     <div class="circleContainer"></div>
 
-    
-<!--
-    <div class="eggCounter">
-      <label for="eggCounter">Enter a number:</label>
-      <input type="number" id="eggCounter">
-      <button onclick="recordAndAdd()">Submit</button>
-    
-    <div id="result"></div>
-    <div id="circleContainer"></div>
-  </div> -->
-    
     <div class="taskform">
       <form id="taskform">
         <h2>Add Egg</h2>
 
         <div class="form-row">
-          <label for="eggName">Egg Type</label>
+          <label for="eggName"><strong>Egg Type:</strong></label>
           <input type="text" name="eggName" id="eggName" required="true" />
         </div>
 
         <div class="form-row">
-          <label for="eggMeal">Meal</label>
+          <label for="eggMeal"><strong>Meal:</strong></label>
           <select id="eggMeal" name="mealType" required="true">
             <option value="">Select one</option>
-            <option value="Breakfest">Breakfeast</option>
+            <option value="Breakfest">Breakfast</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
             <option value="Snack">Snack</option>
           </select>
         </div>
 
-        <!--
         <div class="form-row">
-          <label for="eggNumber">Number of Eggs</label>
-          <input type="number" name="eggNumber" id="eggNumber" required="true" />
-        </div>
-        -->
-        <div class="form-row">
-          <label for="eggCounter">Enter a number:</label>
+          <label for="eggCounter"><strong>Number of Eggs:</strong></label>
           <input type="number" name="eggCounter" id="eggCounter" required="true" />
-
-          
         </div>
-          
-        
-        
-        
+
         <div class="form-row">
-          <label for="eggDate">Date of Completion </label>
+          <label for="eggDate"><strong>Date:</strong></label>
           <input type="date" name="eggDate" id="eggDate">
-          
         </div>
 
         <div class="form-row">
-          <label for="eggTime">Time of Completion</label>
+          <label for="eggTime"><strong>Time:</strong></label>
           <input type="time" name="eggTime" id="eggTime">
         </div>
 
         <div class="form-row">
-            <label for="eggReview">Meal Rating</label>
-                <input type="radio" id="eggReview" name="eggReview" value="1">
-            <label for="eggReview">1</label>
-                <input type="radio" id="eggReview" name="eggReview" value="2">
-            <label for="eggReview">2</label>
-                <input type="radio" id="eggReview" name="eggReview" value="3">
-            <label for="eggReview">3</label>
-                <input type="radio" id="eggReview" name="eggReview" value="4">
-            <label for="eggReview">4</label>
-                <input type="radio" id="eggReview" name="eggReview" value="5">
-            <label for="eggReview">5</label>
-                <input type="radio" id="eggReview" name="eggReview" value="6">
-            <label for="eggReview">6</label>
-                <input type="radio" id="eggReview" name="eggReview" value="7">
-            <label for="eggReview">7</label>
-              <input type="radio" id="eggReview" name="eggReview" value="8">
-            <label for="eggReview">8</label>
-              <input type="radio" id="eggReview" name="eggReview" value="9">
-            <label for="eggReview">9</label>
-              <input type="radio" id="eggReview" name="eggReview" value="10">
-            <label for="eggReview">10</label>
+          <div class="slidecontainer">
+            <input type="range" min="1" max="10" value="5" class="slider" id="eggReview">
+            <p>Value: <span id="review"></span></p>
+          </div>
         </div>
-        
-        <div class="form-row">
-          
-          <!--<input type="submit" value="Submit" onclick="recordAndAdd()">-->
 
+        <div class="form-row-button">
           <button onclick="recordAndAdd()">Submit</button>
           <input type="submit">
         </div>
       </form>
     </div>
 
-    
-    
     <div class="tasklist">
-      <ul id="tasklist">
-      </ul>
+      <ul id="tasklist"></ul>
     </div>
 
     <div class="eggMenu">
-      
-      <h3>Eggs</h3>
+      <h3>Egg Recipes:</h3>
       <br>
       <div class="grid-container">
-
         <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 1">
-          <button class="boxButton">Poached</button>
+          <img src="./Images/imagePoached.png" alt="Poached Eggs">
+          <button class="boxButton">+ Poached</button>
           <div class="popupContainer">
             <div class="popupContent">
-              <h3>Pop-up Content 1</h3>
-              <p>This is the content of Pop-up 1.</p>
+              <h3>Poached Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+              <ul>
+                <li>Fresh large eggs</li>
+                <li>Water</li>
+                <li>Vinegar (optional)</li>
+                <li>Salt and pepper (to taste)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Medium-sized saucepan</li>
+                <li>Slotted spoon</li>
+                <li>Timer or clock</li>
+                <li>Paper towels or kitchen towel</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Fill a medium-sized saucepan with about 2 to 3 inches of water. Place it over medium-high heat and bring the water to a gentle simmer. The water should be hot but not boiling vigorously.</li><br>
+                <li>If desired, add a teaspoon of vinegar to the water. Vinegar helps coagulate the egg whites faster, resulting in a neater poached egg. However, it's optional and can be skipped if you don't prefer the taste of vinegar.</li><br>
+                <li>Crack a fresh egg into a small bowl or ramekin. This will make it easier to slide the egg into the simmering water without breaking the yolk.</li><br>
+                <li>Use a spoon to create a gentle whirlpool in the simmering water. This swirling motion will help the egg white wrap around the yolk, giving your poached egg a neat shape.</li><br>
+                <li>Carefully slide the egg from the bowl or ramekin into the center of the whirlpool. The swirling water will help the egg white fold around the yolk, creating a rounded shape.</li><br>
+                <li>Set a timer for 3 to 4 minutes for a soft-poached egg with a runny yolk. Adjust the timing based on your preference for yolk consistency. For a firmer yolk, poach the egg for 5 to 6 minutes.</li><br>
+                <li>While the egg is poaching, prepare a plate or bowl lined with paper towels or a kitchen towel. This will help absorb excess water when you remove the poached egg from the simmering water.</li><br>
+                <li>Using a slotted spoon, carefully lift the poached egg from the water, allowing any excess water to drain away.</li><br>
+                <li>Place the poached egg on the prepared plate or bowl lined with paper towels or a kitchen towel. Gently pat the top of the egg with another paper towel to absorb any remaining water.</li><br>
+                <li>Season the poached egg with salt and pepper to taste.</li><br>
+                <li>Repeat the process for additional eggs, if desired.</li><br>
+              </ol>
+              <br>
               <button class="closePopup">Close</button>
             </div>
           </div>
         </div>
         
         <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Scrambled</button>
+          <img src="./Images/imageScrambled.png" alt="Scrambled Eggs2">
+          <button class="boxButton">+ Scrambled</button>
           <div class="popupContainer">
             <div class="popupContent">
-              <h3>Pop-up Content 2</h3>
-              <p>This is the content of Pop-up 2.</p>
+              <h3>Scrambled Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+              <ul>
+                <li>4 large eggs</li>
+                <li>Salt and pepper to taste</li>
+                <li>2 tablespoons butter</li>
+                <li>Optional toppings (e.g., shredded cheese, chopped herbs, diced vegetables)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Medium-sized bowl</li>
+                <li>Whisk or fork</li>
+                <li>Non-stick skillet or frying pan</li>
+                <li>Spatula</li>
+                <li>Kitchen timer (optional)</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Crack the eggs into a medium-sized bowl and whisk them until the yolks and whites are fully combined. Season with salt and pepper to taste. Whisking the eggs well will result in a fluffy and uniform texture.</li><br>
+                <li>Place a non-stick skillet or frying pan over medium heat and add the butter. Allow it to melt and coat the bottom of the pan evenly.</li> <br>
+                <li>Once the butter has melted and starts to sizzle slightly, pour the whisked eggs into the pan. Let them sit undisturbed for about 10-15 seconds to allow the bottom layer to begin cooking.</li> <br>
+                <li>Using a spatula, gently push the cooked edges of the eggs towards the center of the pan, allowing the uncooked eggs to flow to the edges. Repeat this process every 10-15 seconds, moving around the pan, until the eggs are mostly cooked but still slightly runny.</li> <br>
+                <li>If desired, this is the time to add any optional toppings, such as shredded cheese, chopped herbs, or diced vegetables. Sprinkle them evenly over the eggs in the pan.</li> <br>
+                <li>Continue to cook the eggs for another 1-2 minutes, gently folding them with the spatula until they reach your desired level of doneness. Be careful not to overcook the eggs, as they can become dry.</li> <br>
+                <li>Once the scrambled eggs are cooked to your liking, remove the pan from the heat. Transfer the eggs to a plate or serving dish immediately to prevent them from cooking further in the residual heat of the pan.</li> <br>
+                <li>Serve the scrambled eggs hot, garnished with additional salt, pepper, or your favorite toppings. They can be enjoyed on their own, with toast, or as part of a larger breakfast or brunch spread.</li> <br>
+              </ol>
+              <br>
               <button class="closePopup">Close</button>
             </div>
           </div>
         </div>
 
         <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Fried</button>
+          <img src="./Images/imageFried.png" alt="Fried Eggs">
+          <button class="boxButton">+ Fried</button>
           <div class="popupContainer">
             <div class="popupContent">
-              <h3>Pop-up Content 3</h3>
-              <p>This is the content of Pop-up 3.</p>
+              <h3>Fried Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+              <ul>
+                <li>Eggs (as many as desired)</li>
+                <li>Salt and pepper to taste</li>
+                <li>Cooking oil or butter</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Non-stick skillet or frying pan</li>
+                <li>Spatula</li>
+                <li>Kitchen timer (optional)</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>      
+                <li>Place a non-stick skillet or frying pan over medium heat. Add a small amount of cooking oil or butter to coat the bottom of the pan. Allow it to heat up for a minute or two.</li><br>
+                <li>Crack the eggs into a bowl, one at a time, ensuring not to break the yolks. This allows you to check the freshness and separate any shell fragments if needed.</li><br>
+                <li>Gently slide the eggs from the bowl into the heated pan, taking care not to break the yolks. If you prefer, you can crack the eggs directly into the pan.</li><br>
+                <li>Season the eggs with salt and pepper to taste. You can sprinkle the seasonings directly on top of the eggs or add them later during the cooking process.</li><br>
+                <li>Cook the eggs undisturbed for a few minutes until the whites start to set and become opaque. For over-easy or over-medium eggs, cover the pan with a lid for a minute or two to allow the steam to cook the top of the eggs.</li><br>
+                <li>If desired, you can flip the eggs gently using a spatula to cook the other side. This is common for over-easy or over-medium eggs. Be careful not to break the yolks if you prefer them runny.</li><br>
+                <li>Continue cooking the eggs until they reach your desired level of doneness. For sunny-side-up eggs, cook them until the whites are fully set, but the yolks are still runny. For over-easy or over-medium eggs, cook them until the yolks are partially or fully set, depending on your preference.</li><br>
+                <li>Once the eggs are cooked to your liking, use a spatula to carefully remove them from the pan and transfer them to a plate. Take care not to break the yolks.</li><br>
+                <li>Serve the fried eggs immediately while they are hot. They pair well with toast, bacon, sausage, or any other breakfast sides you enjoy.</li><br>
+              </ol>
+              <br>
               <button class="closePopup">Close</button>
             </div>
           </div>
         </div>
 
         <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Omelette</button>
+          <img src="./Images/imageOmelette.png" alt="Omelette Eggs">
+          <button class="boxButton">+ Omelette</button>
           <div class="popupContainer">
             <div class="popupContent">
-              <h3>Pop-up Content 4</h3>
-              <p>This is the content of Pop-up 4.</p>
+              <h3>Omelette Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+
+              <ul>
+                <li>3 large eggs</li>
+                <li>Salt and pepper to taste</li>
+                <li>2 tablespoons milk or water</li>
+                <li>1 tablespoon butter or cooking oil</li>
+                <li>Fillings of your choice (e.g., cheese, diced vegetables, cooked meats, herbs)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Medium-sized bowl</li>
+                <li>Whisk or fork</li>
+                <li>Non-stick skillet or frying pan</li>
+                <li>Spatula</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Crack the eggs into a medium-sized bowl. Add salt, pepper, and milk (or water) to the eggs. Whisk the mixture until the yolks and whites are fully combined and the mixture becomes frothy. Whisking helps create a light and fluffy omelette.</li><br>
+                <li>Heat a non-stick skillet or frying pan over medium heat. Add butter (or cooking oil) and allow it to melt and coat the bottom of the pan evenly.</li><br>
+                <li>Once the butter has melted and starts to sizzle, pour the egg mixture into the pan. Let it sit undisturbed for a few seconds to allow the bottom to start cooking.</li><br>
+                <li>Using a spatula, gently push the cooked edges of the omelette toward the center, tilting the pan to let the uncooked egg mixture flow to the edges. Repeat this process around the omelette until it is mostly set but still slightly runny on top.</li><br>
+                <li>At this point, add your desired fillings to one half of the omelette. Sprinkle them evenly over the surface.</li><br>
+                <li>Using the spatula, carefully fold the empty half of the omelette over the side with the fillings, creating a half-moon shape. Press it gently to seal the omelette.</li><br>
+                <li>Cook the omelette for another 1-2 minutes to ensure the fillings heat through and any cheese melts. Adjust the heat if needed to prevent burning.</li><br>
+                <li>Once the omelette is cooked to your desired level of doneness, slide it onto a plate using the spatula, folding it in half if necessary.</li><br>
+                <li>Serve the omelette hot. You can garnish it with additional fillings, herbs, or a sprinkle of cheese if desired. Omelettes are versatile and can be enjoyed for breakfast, brunch, or any meal of the day.</li><br>
+              </ol>
+              <br>
               <button class="closePopup">Close</button>
             </div>
           </div>
         </div>
 
+        <div class="box">
+          <img src="./Images/imageFrittata.png" alt="Frittata Eggs">
+          <button class="boxButton"> + Frittata</button>
+          <div class="popupContainer">
+            <div class="popupContent">
+              <h3>Frittata Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+
+              <ul>
+                <li>8 large eggs</li>
+                <li>Salt and pepper to taste</li>
+                <li>1/4 cup milk or heavy cream</li>
+                <li>1 tablespoon olive oil</li>
+                <li>1 small onion, diced</li>
+                <li>1 bell pepper, diced</li>
+                <li>1 cup diced vegetables of your choice (e.g., mushrooms, zucchini, spinach)</li>
+                <li>1 cup cooked meat or protein (e.g., diced ham, cooked sausage, bacon)</li>
+                <li>1 cup shredded cheese of your choice (e.g., cheddar, mozzarella, feta)</li>
+                <li>Fresh herbs for garnish (e.g., parsley, basil, chives)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Large oven-safe skillet or frying pan</li>
+                <li>Whisk or fork</li>
+                <li>Spatula</li>
+                <li>Oven (preheated to 350°F/175°C)</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Preheat your oven to 350°F (175°C) to prepare for baking the frittata.</li><br>
+                <li>In a large bowl, crack the eggs and whisk them until the yolks and whites are fully combined. Add salt, pepper, and milk (or heavy cream) to the eggs and whisk again to incorporate the ingredients. Set the egg mixture aside.</li><br>
+                <li>Heat the olive oil in a large oven-safe skillet or frying pan over medium heat. Add the diced onion and bell pepper, and sauté until they become soft and translucent, about 3-4 minutes.</li><br>
+                <li>Add the remaining diced vegetables of your choice to the skillet and sauté them until they are cooked and any excess moisture has evaporated. This will ensure the frittata doesn't become watery. If using leafy greens like spinach, wilt them before adding other vegetables.</li><br>
+                <li>If you're using any cooked meat or protein, add it to the skillet and heat it through for a minute or two.</li><br>
+                <li>Reduce the heat to low and pour the egg mixture over the sautéed vegetables and meat in the skillet. Use a spatula to distribute the ingredients evenly.</li><br>
+                <li>Sprinkle the shredded cheese evenly over the top of the egg mixture.</li><br>
+                <li>Allow the frittata to cook on the stovetop over low heat for about 5 minutes, or until the edges start to set.</li><br>
+                <li>Transfer the skillet to the preheated oven and bake the frittata for approximately 15-20 minutes, or until the eggs are fully set and the top is golden brown.</li><br>
+                <li>Remove the skillet from the oven (use oven mitts, as the handle will be hot) and let the frittata cool for a few minutes.</li><br>
+                <li>Garnish the frittata with fresh herbs, such as parsley, basil, or chives.</li><br>
+                <li>Slice the frittata into wedges and serve it warm. It can be enjoyed for breakfast, brunch, or as a satisfying main dish for any meal.</li><br>
+              </ol>
+              <br>
+              <button class="closePopup">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./Images/imageShakshuka.png" alt="Shakshuka Eggs">
+          <button class="boxButton">+ Shakshuka</button>
+          <div class="popupContainer">
+            <div class="popupContent">
+              <h3>Shakshuka Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+
+              <ul>
+                <li>2 tablespoons olive oil</li>
+                <li>1 onion, thinly sliced</li>
+                <li>1 bell pepper, thinly sliced</li>
+                <li>2 cloves of garlic, minced</li>
+                <li>1 teaspoon ground cumin</li>
+                <li>1 teaspoon ground paprika</li>
+                <li>1/2 teaspoon ground cayenne pepper (adjust to taste)</li>
+                <li>1 can (400 grams) crushed tomatoes</li>
+                <li>Salt and pepper to taste</li>
+                <li>4-6 large eggs</li>
+                <li>Fresh herbs for garnish (e.g., parsley, cilantro)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Large skillet or frying pan with a lid</li>
+                <li>Wooden spoon or spatula</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Heat the olive oil in a large skillet or frying pan over medium heat.</li>
+                <li>Add the thinly sliced onion and bell pepper to the skillet. Sauté them until they become soft and lightly caramelized, stirring occasionally, for about 5-7 minutes.</li>
+                <li>Add the minced garlic, ground cumin, ground paprika, and ground cayenne pepper to the skillet. Stir the spices with the onions and bell peppers for about 1-2 minutes until fragrant.</li>
+                <li>Pour in the crushed tomatoes and season with salt and pepper to taste. Stir well to combine all the ingredients. Reduce the heat to low and let the mixture simmer for about 10-15 minutes, allowing the flavors to meld together and the sauce to thicken slightly.</li>
+                <li>Create small wells in the tomato sauce using the back of a spoon or spatula. Crack the eggs one by one into each well. Season the eggs with salt and pepper.</li>
+                <li>Cover the skillet with a lid and let the shakshuka cook on low heat for about 8-10 minutes, or until the egg whites are set but the yolks are still slightly runny. Cook longer if you prefer your eggs more well-done.</li>
+                <li>Once the eggs are cooked to your liking, remove the skillet from the heat. Garnish the shakshuka with fresh herbs, such as parsley or cilantro.</li>
+                <li>Serve the shakshuka directly from the skillet. It pairs well with crusty bread or pita for dipping and soaking up the flavorful tomato sauce.</li>
+              </ol>
+              <br>
+              <button class="closePopup">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./Images/imageBenidict.png" alt="Egg Benidict">
+          <button class="boxButton"> + Benedict</button>
+          <div class="popupContainer">
+            <div class="popupContent">
+              <h3>Eggs Benedict</h3>
+              <h4>Ingredients:</h4>
+              <br>
+              <ul>
+                <li>4 English muffins, split and toasted</li>
+                <li>8 slices Canadian bacon or ham</li>
+                <li>4 large eggs</li>
+                <li>Hollandaise sauce:</li>
+                <ul>
+                  <li>3 large egg yolks</li>
+                  <li>1 tablespoon freshly squeezed lemon juice</li>
+                  <li>1/2 cup unsalted butter, melted</li>
+                  <li>Salt and pepper to taste</li>
+                </ul>
+                <li>Chopped fresh chives or parsley for garnish (optional)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Saucepan</li>
+                <li>Whisk</li>
+                <li>Double boiler or heatproof bowl</li>
+                <li>Slotted spoon</li>
+                <li>Toaster or toaster oven</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Fill a saucepan with water and bring it to a gentle simmer over medium heat. This will be used for poaching the eggs.</li><br>
+                <li>In the meantime, prepare the hollandaise sauce. In a heatproof bowl or the top of a double boiler, whisk together the egg yolks and lemon juice until well combined.</li><br>
+                <li>Place the bowl over a saucepan with simmering water, making sure the bottom of the bowl does not touch the water. Continue whisking the egg yolk mixture vigorously while slowly pouring in the melted butter. Keep whisking until the sauce thickens and becomes smooth.</li><br>
+                <li>Season the hollandaise sauce with salt and pepper to taste. Remove the bowl from the heat and set it aside, but keep it warm.</li><br>
+                <li>In a separate skillet, cook the Canadian bacon or ham slices over medium heat until they are heated through and lightly browned. Remove them from the skillet and set them aside.</li><br>
+                <li>Now it's time to poach the eggs. Crack one egg into a small bowl or ramekin. Create a gentle whirlpool in the simmering water using a spoon, then carefully slide the egg into the center of the whirlpool. Repeat this process for the remaining eggs.</li><br>
+                <li>Poach the eggs for about 3-4 minutes, or until the whites are set but the yolks are still runny. Use a slotted spoon to carefully remove each poached egg from the water, allowing any excess water to drain off.</li><br>
+                <li>Assemble the Eggs Benedict by placing a slice of Canadian bacon or ham on each toasted English muffin half.</li><br>
+                <li>Carefully place a poached egg on top of the bacon or ham on each muffin half.</li><br>
+                <li>Spoon the hollandaise sauce generously over each poached egg.</li><br>
+                <li>Garnish the Eggs Benedict with chopped fresh chives or parsley, if desired.</li><br>
+                <li>Serve the Eggs Benedict immediately while still warm. They pair well with a side of sautéed spinach, roasted potatoes, or a fresh salad.</li><br>
+              </ol>
+              <br>
+              <button class="closePopup">Close</button>
+            </div>
+          </div>
+        </div>
         
         <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Frittata</button>
+          <img src="./Images/imageBoiled.png" alt="Boiled Eggs">
+          <button class="boxButton">+ Boiled</button>
           <div class="popupContainer">
             <div class="popupContent">
-              <h3>Pop-up Content 5</h3>
-              <p>This is the content of Pop-up 5.</p>
-              <button class="closePopup">Close</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Shakshuka</button>
-          <div class="popupContainer">
-            <div class="popupContent">
-              <h3>Pop-up Content 6</h3>
-              <p>This is the content of Pop-up 6.</p>
-              <button class="closePopup">Close</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Benedict</button>
-          <div class="popupContainer">
-            <div class="popupContent">
-              <h3>Pop-up Content 7</h3>
-              <p>This is the content of Pop-up 7.</p>
-              <button class="closePopup">Close</button>
-            </div>
-          </div>
-        </div>
-        
-        <div class="box">
-          <img src="./Images/YolkLogo.png" alt="Image 2">
-          <button class="boxButton">Boiled</button>
-          <div class="popupContainer">
-            <div class="popupContent">
-              <h3>Pop-up Content 8</h3>
-              <p>This is the content of Pop-up 8.</p>
+              <h3>Boiled Eggs</h3>
+              <h4>Ingredients:</h4>
+              <br>
+              <ul>
+                <li>Eggs (as many as desired)</li>
+                <li>Water</li>
+                <li>Salt (optional)</li>
+              </ul>
+              <br>
+              <h4>Equipment:</h4>
+              <br>
+              <ul>
+                <li>Saucepan</li>
+                <li>Slotted spoon</li>
+                <li>Timer or clock</li>
+              </ul>
+              <br>
+              <h4>Recipe:</h4>
+              <br>
+              <ol>
+                <li>Place the eggs in a single layer at the bottom of a saucepan. Make sure the saucepan is large enough to hold the eggs in a single layer without crowding.</li><br>
+                <li>Add enough water to the saucepan to cover the eggs by about an inch (2.5 cm). This will ensure that the eggs are fully submerged during cooking.</li><br>
+                <li>Optional: If desired, add a pinch of salt to the water. This can help prevent the eggs from cracking and make them easier to peel later on.</li><br>
+                <li>Place the saucepan on the stovetop and turn the heat to high. Bring the water to a boil.</li><br>
+                <li>Once the water reaches a rolling boil, reduce the heat to medium-low to maintain a gentle simmer. Let the eggs simmer for the desired doneness:</li><br>
+                <ul>
+                  <li>Soft-boiled eggs: Simmer for about 4-5 minutes.</li><br>
+                  <li>Medium-boiled eggs: Simmer for about 6-7 minutes.</li><br>
+                  <li>Hard-boiled eggs: Simmer for about 9-12 minutes.</li><br>
+                </ul>
+                <li>While the eggs are simmering, prepare a bowl of ice water. This will be used to cool the eggs quickly and stop the cooking process.</li><br>
+                <li>Once the eggs are cooked to your desired level, use a slotted spoon to carefully transfer them to the bowl of ice water. Let them sit in the ice water for about 5 minutes to cool down completely.</li><br>
+                <li>After the eggs have cooled, gently tap each egg on a hard surface to crack the shell. Roll the egg between your hands to loosen the shell.</li><br>
+                <li>Peel the shell off the eggs, starting from the wider end where the air pocket is located. If the shell is difficult to remove, you can peel the eggs under a slow stream of running water to help remove any stubborn shell pieces.</li><br>
+                <li>Once peeled, the boiled eggs are ready to be enjoyed as a snack, used in salads, or incorporated into various recipes.</li><br>
+              </ol>
+              <br>
               <button class="closePopup">Close</button>
             </div>
           </div>
         </div>
       </div>
-  
-  
 
   <script src="script.js"></script>
-  <script src="tasksTests.js"></script>
 </div>
 </body>
-
 </html>

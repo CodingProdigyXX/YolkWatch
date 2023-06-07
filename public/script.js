@@ -1,4 +1,3 @@
-// Orginal code from the week 3 tutorial
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
@@ -20,6 +19,14 @@ function addTask(name, type, counter, date, time, review) {
   displayTask(task);
 }
 
+var slider = document.getElementById("eggReview");
+var output = document.getElementById("review");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   addTask(
@@ -36,16 +43,13 @@ function displayTask(task) {
   let item = document.createElement("li");
   item.setAttribute("data-id", task.id);
   item.innerHTML = 
-    `<p><strong>${task.name}</strong><br>
-    ${task.type}<br>
-    
-    ${task.counter}  Eggs<br>
-    ${task.date} Date egg was made</em><br>
-    ${task.time} Time egg was made<br>
-    ${task.review} / 10 Rating
-
+    `<p><strong>Egg Type: </strong>${task.name}<br>
+    <strong>Meal: </strong>${task.type}<br>
+    <strong>Eggs: </strong>${task.counter}  <br>
+    <strong>Date: </strong>${task.date} </em><br>
+    <strong>Time: </strong>${task.time}</strong>  <br>
+    <strong>Rating: </strong>${task.review} / 10 
     `;
-    //<span><em>${task.time} minutes</em><br>${task.rate}/10 Rating</span>
 
   tasklist.appendChild(item);
 
@@ -63,16 +67,9 @@ function displayTask(task) {
         taskList.splice(taskArrayIndex, 1)
       }
     })
-
     console.log(taskList)
     item.remove();
   })
-
-  
-
-
-  
-  // Leave the bracket below to close the displayTask function
 }
 
 var numbers = [];
@@ -99,7 +96,7 @@ function displayNumbersSum() {
 
   for (var j = 0; j < resultElements.length; j++) {
     resultElements[j].textContent = "Total Eggs: " + sum;
-    resultElements[j].style.color = "#8B4513"; // Apply CSS color property
+    resultElements[j].style.color = "#8B4513";
     resultElements[j].style.fontSize = "40px";
   }
 
@@ -113,21 +110,12 @@ function displayNumbersSum() {
   }
 }
 
-// Example usage
 displayNumbersSum();
-
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
   const boxButtons = document.querySelectorAll('.boxButton');
   const closeButtons = document.querySelectorAll('.closePopup');
   const popupContainers = document.querySelectorAll('.popupContainer');
-
-  
 
   boxButtons.forEach((button, index) => {
     button.addEventListener('click', function() {
@@ -141,45 +129,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-
-
-
-/*
-// SECTION 2 CODE BELOW
-let invoiceButtonElem = document.getElementById('generateInvoice');
-let invoiceTableElem = document.getElementById('invoiceTable');
-let clientParagraph = document.getElementById('client');
-let totalParagraph = document.getElementById('total');
-
-
-invoiceButtonElem.addEventListener("click", () => {
-  let total = 0;
-  
-  for (let i = 0; i < taskList.length; i++) {
-      if (taskList[i].billable) {
-        clientParagraph.textContent = taskList[i].client;
-        
-        let price = taskList[i].rate * taskList[i].time;
-        total += price;
-        totalParagraph.innerHTML = `Total: $${total}`
-        
-        let rowElem = document.createElement('tr');
-        let itemElem = document.createElement('td');
-        let priceElem = document.createElement('td');
-        let itemText = document.createTextNode(taskList[i].name);
-        let priceText = document.createTextNode('$' + price);
-        
-        itemElem.appendChild(itemText);
-        priceElem.appendChild(priceText);
-        
-        rowElem.appendChild(itemElem);
-        rowElem.appendChild(priceElem);
-        
-        invoiceTableElem.appendChild(rowElem);
-        
-      }
-  }
-  
-})
-*/
